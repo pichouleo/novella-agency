@@ -18,19 +18,22 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Novella Agency — L\'excellence digitale, façonnée pour vous',
-  description:
-    'Agence web freelance basée en Normandie. Sites vitrine sur-mesure, SEO et maintenance pour artisans, entrepreneurs et commerces locaux partout en France.',
-  keywords: [
-    'agence web Normandie',
-    'création site vitrine',
-    'SEO freelance',
-    'site internet artisan',
-    'développeur web freelance',
-  ].join(', '),
+  title: {
+    default: 'Novella Agency | Création de sites web en Normandie',
+    template: '%s | Novella Agency'
+  },
+  description: 'Agence web en Normandie spécialisée dans la création, maintenance de sites internet et référencement SEO. Devis gratuit.',
+  keywords: ['agence web Normandie', 'création site internet Rouen', 'référencement SEO Normandie', 'agence web Seine-Maritime'],
+  robots: 'index, follow',
+  alternates: {
+    canonical: 'https://novellagency.fr'
+  },
   openGraph: {
-    title: 'Novella Agency',
-    description: 'L\'excellence digitale, façonnée pour vous.',
+    title: 'Novella Agency | Agence Web Normandie',
+    description: 'Création de sites web et SEO en Normandie',
+    url: 'https://novellagency.fr',
+    siteName: 'Novella Agency',
+    locale: 'fr_FR',
     type: 'website',
   },
 }
@@ -38,7 +41,34 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${cormorant.variable} ${jakarta.variable}`}>
-      <body>{children}</body>
+      <body>
+  {children}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Novella Agency",
+        "description": "Agence web en Normandie spécialisée dans la création de sites internet et le référencement SEO",
+        "url": "https://novellagency.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Normandie",
+          "addressCountry": "FR"
+        },
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 49.4431,
+            "longitude": 1.0993
+          }
+        }
+      })
+    }}
+  />
+</body>
     </html>
   )
 }
