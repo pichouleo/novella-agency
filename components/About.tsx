@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -33,29 +34,23 @@ export default function About() {
             transition={{ duration: 0.8, ease }}
           >
             {/* portrait card */}
-            <div className="relative aspect-[4/5] max-w-sm mx-auto bg-card border border-white/5">
-              {/* abstract gradient representing a portrait */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(160deg, #111120 0%, #1A1A30 40%, #0D0D18 100%)',
-                }}
-              />
-              {/* decorative initials */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-serif text-[10rem] font-light text-gold/[0.06] select-none leading-none">
-                  L
-                </span>
-              </div>
-              {/* name plate */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="font-serif text-xl text-cream">Léo</p>
-                <p className="label text-gold/60 text-[0.6rem] tracking-[0.25em]">Fondateur · Développeur Web</p>
-              </div>
-              {/* corner accent */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-gold/30" />
-              <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-gold/30" />
-            </div>
+<div className="relative aspect-[4/5] max-w-sm mx-auto bg-card border border-white/5 overflow-hidden">
+  <Image
+    src="/images/leo.png"
+    alt="Léo Pichou — Fondateur et développeur web Novella Agency en Normandie"
+    fill
+    className="object-cover object-top"
+    priority
+  />
+  {/* name plate */}
+  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+    <p className="font-serif text-xl text-cream">Léo</p>
+    <p className="label text-gold/60 text-[0.6rem] tracking-[0.25em]">Fondateur · Développeur Web</p>
+  </div>
+  {/* corner accent */}
+  <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-gold/30" />
+  <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-gold/30" />
+</div>
 
             {/* floating badge */}
             <div className="absolute -bottom-6 -right-4 lg:-right-10 bg-gold p-5 flex flex-col items-center justify-center shadow-xl">
