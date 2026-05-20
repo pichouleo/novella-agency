@@ -105,37 +105,39 @@ export default function Hero() {
         </motion.p>
 
         {/* headline */}
-        <div className="overflow-hidden mb-4">
-          <motion.h1
-            className="display font-serif text-[clamp(3rem,8vw,7.5rem)] font-light text-cream"
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.85, ease, delay: 0.45 }}
-          >
-            L&apos;excellence
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-4">
-          <motion.h1
-            className="display font-serif text-[clamp(3rem,8vw,7.5rem)] font-light italic"
-            style={{ color: 'var(--gold)' }}
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.85, ease, delay: 0.58 }}
-          >
-            digitale,
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-12">
-          <motion.h1
-            className="display font-serif text-[clamp(3rem,8vw,7.5rem)] font-light text-cream"
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.85, ease, delay: 0.7 }}
-          >
-            façonnée pour vous.
-          </motion.h1>
-        </div>
+       <h1 className="display font-serif text-[clamp(3rem,8vw,7.5rem)] font-light">
+  <div className="overflow-hidden mb-4">
+    <motion.span
+      className="block text-cream"
+      initial={{ y: '100%' }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.85, ease, delay: 0.45 }}
+    >
+      L&apos;excellence
+    </motion.span>
+  </div>
+  <div className="overflow-hidden mb-4">
+    <motion.span
+      className="block italic"
+      style={{ color: 'var(--gold)' }}
+      initial={{ y: '100%' }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.85, ease, delay: 0.58 }}
+    >
+      digitale,
+    </motion.span>
+  </div>
+  <div className="overflow-hidden mb-12">
+    <motion.span
+      className="block text-cream"
+      initial={{ y: '100%' }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.85, ease, delay: 0.7 }}
+    >
+      façonnée pour vous.
+    </motion.span>
+  </div>
+</h1>
 
         {/* description */}
         <motion.p
